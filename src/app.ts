@@ -14,7 +14,6 @@ var corsOptions = {
 };
 
 const app: Application = express();
-const PORT =  4500;
 
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -33,7 +32,5 @@ mongoose.connect(process.env.MONGO_URI!)
 .catch((err) => {
   console.error('Error connected  MongoDB:', err);
 });
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 export default app;
